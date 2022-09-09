@@ -47,15 +47,14 @@ public class AppleTree : MonoBehaviour
         if (pos.x < -leftAndRightEdge)
         {
             speed = Mathf.Abs(speed); // Move right
-        }
-        else if (pos.x > leftAndRightEdge)
+        } else if (pos.x > leftAndRightEdge)
         {
             speed = -Mathf.Abs(speed); // Move left
         }
         
     }
 
-    // time based
+    // time based... 50 per second
     void FixedUpdate()
     {
         if (Random.value < chanceToChangeDirections)

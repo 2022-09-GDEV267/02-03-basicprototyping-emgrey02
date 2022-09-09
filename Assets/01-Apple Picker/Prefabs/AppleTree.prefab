@@ -261,5 +261,5 @@ MonoBehaviour:
   applePrefab: {fileID: 5907717913540757419, guid: 941dce8c7098d734f8c55a9bafbf6174, type: 3}
   speed: 5
   leftAndRightEdge: 20
-  chanceToChangeDirections: 0.1
+  chanceToChangeDirections: 0.02
   secondsBetweenAppleDrops: 1
