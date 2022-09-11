@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/03-Prototype1/Main-Prototype 1.unity
     guid: 84930580229bb4f138179e160aab9b89
+  - enabled: 1
+    path: Assets/01-Apple Picker/StartScreen.unity
+    guid: 5da23879e8217744aa6b6a5965048ad7
+  - enabled: 1
+    path: Assets/01-Apple Picker/GameOverScreen.unity
+    guid: 03247195611969e4289d9cd205109bec
   m_configObjects: {}
