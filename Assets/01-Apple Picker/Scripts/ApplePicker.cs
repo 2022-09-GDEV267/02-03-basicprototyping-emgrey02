@@ -51,6 +51,7 @@ public class ApplePicker : MonoBehaviour
         // if there are no baskets left, load the Game Over screen
         if (basketList.Count == 0)
         {
+            AppleTree.level = 0;
             LoadApplePicker.GameOver();
         }
     }

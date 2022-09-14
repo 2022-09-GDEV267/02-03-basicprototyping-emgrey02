@@ -10,16 +10,18 @@ public class AppleTree : MonoBehaviour
     public GameObject applePrefab;
 
     // speed at which the AppleTree moves
-    public float speed = 1f;
+    private float[] speed = { 5f, 10f, 15f };
 
     // distance where AppleTree turns around
     public float leftAndRightEdge = 10f;
 
     // chance that the AppleTree will change directions
-    public float chanceToChangeDirections = 0.1f;
+    private float[] chanceToChangeDirections = { 0.02f, 0.05f, 0.08f };
 
     // rate at which apples will be instantiated
-    public float secondsBetweenAppleDrops = 1f;
+    private float[] secondsBetweenAppleDrops = { 1f, .8f, .5f };
+
+    public static int level = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class AppleTree : MonoBehaviour
     {
         GameObject apple = Instantiate<GameObject>(applePrefab);
         apple.transform.position = transform.position;
-        Invoke("DropApple", secondsBetweenAppleDrops);
+        Invoke("DropApple", secondsBetweenAppleDrops[level]);
     }
 
     // Update is called once per frame
@@ -40,16 +42,16 @@ public class AppleTree : MonoBehaviour
     {
         // basic movement
         Vector3 pos = transform.position;
-        pos.x += speed * Time.deltaTime;
+        pos.x += speed[level] * Time.deltaTime;
         transform.position = pos;
 
         //changing direction
         if (pos.x < -leftAndRightEdge)
         {
-            speed = Mathf.Abs(speed); // Move right
+            speed[level] = Mathf.Abs(speed[level]); // Move right
         } else if (pos.x > leftAndRightEdge)
         {
-            speed = -Mathf.Abs(speed); // Move left
+            speed[level] = -Mathf.Abs(speed[level]); // Move left
         }
         
     }
@@ -57,9 +59,9 @@ public class AppleTree : MonoBehaviour
     // time based... 50 per second
     void FixedUpdate()
     {
-        if (Random.value < chanceToChangeDirections)
+        if (Random.value < chanceToChangeDirections[level])
         {
-            speed *= -1; // change direction
+            speed[level] *= -1; // change direction
         }
     }
 }

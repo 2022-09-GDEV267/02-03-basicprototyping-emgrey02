@@ -6,12 +6,11 @@ using TMPro;
 
 public class HighScore : MonoBehaviour
 {
-    static public int score = 1000;
+    static public int score;
     public TextMeshProUGUI highScore;
 
     void Awake()
     {
-
         // if the PlayerPrefs HighScore already exists, read it
         if (PlayerPrefs.HasKey("HighScore"))
         {
@@ -22,6 +21,10 @@ public class HighScore : MonoBehaviour
         PlayerPrefs.SetInt("HighScore", score);
     }
 
+    private void Start()
+    {
+        NewToggle.newHighScore = false;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -36,5 +39,10 @@ public class HighScore : MonoBehaviour
 
         }
 
+    }
+
+    void clearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

@@ -11,6 +11,8 @@ public class Basket : MonoBehaviour
 
     public TextMeshProUGUI scoreGT;
 
+    public int appleCount = 0;
+
     void Start()
     {
         // find reference to ScoreCounter GameObject
@@ -50,6 +52,7 @@ public class Basket : MonoBehaviour
         if (collidedWith.tag == "Apple")
         {
             Destroy(collidedWith);
+            appleCount++;
         }
 
         // parse text of scoreGT into an int
@@ -65,6 +68,15 @@ public class Basket : MonoBehaviour
         if (score > HighScore.score)
         {
             HighScore.score = score;
+        }
+
+        if (appleCount == 10)
+        {
+            appleCount = 0;
+            if (AppleTree.level != 2)
+            {
+                AppleTree.level++;
+            }
         }
     }
 }
