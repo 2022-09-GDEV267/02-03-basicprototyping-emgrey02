@@ -11,7 +11,7 @@ public class Basket : MonoBehaviour
 
     public TextMeshProUGUI scoreGT;
 
-    public int appleCount = 0;
+    private int applesCaught = 0;
 
     void Start()
     {
@@ -52,7 +52,7 @@ public class Basket : MonoBehaviour
         if (collidedWith.tag == "Apple")
         {
             Destroy(collidedWith);
-            appleCount++;
+            applesCaught++;
         }
 
         // parse text of scoreGT into an int
@@ -70,13 +70,13 @@ public class Basket : MonoBehaviour
             HighScore.score = score;
         }
 
-        if (appleCount == 10)
+        if (applesCaught % 15 == 0)
         {
-            appleCount = 0;
-            if (AppleTree.level != 2)
-            {
-                AppleTree.level++;
-            }
+            AppleTree.level++;
+            // get a reference to the ApplePicker component of Main Camera
+            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+
+            apScript.updateLevelText();
         }
     }
 }

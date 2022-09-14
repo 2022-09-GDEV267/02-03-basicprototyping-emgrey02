@@ -25,6 +25,7 @@ public class HighScore : MonoBehaviour
     {
         NewToggle.newHighScore = false;
     }
+
     // Update is called once per frame
     void Update()
     {

@@ -18,6 +18,9 @@ public class Apple : MonoBehaviour
 
             // call the public AppleDestroyed() method of apScript
             apScript.AppleDestroyed();
+
+            AppleTree.level = 0;
+            apScript.updateLevelText();
         }
     }
 }

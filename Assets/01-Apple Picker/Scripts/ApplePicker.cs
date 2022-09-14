@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ApplePicker : MonoBehaviour
 {
@@ -12,11 +14,18 @@ public class ApplePicker : MonoBehaviour
     public float basketBottomY = -14f;
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
+    public TextMeshProUGUI level;
 
     // Start is called before the first frame update
     void Start()
     {
         basketList = new List<GameObject>();
+
+        // find reference to level GameObject
+        GameObject levels = GameObject.Find("level");
+        // get text component of that GameObject
+        level = levels.GetComponent<TextMeshProUGUI>();
+        updateLevelText();
 
         for (int i = 0; i < numBaskets; i++)
         {
@@ -54,5 +63,10 @@ public class ApplePicker : MonoBehaviour
             AppleTree.level = 0;
             LoadApplePicker.GameOver();
         }
+    }
+
+    public void updateLevelText()
+    {
+        level.text = "LEVEL " + (AppleTree.level + 1).ToString();
     }
 }
