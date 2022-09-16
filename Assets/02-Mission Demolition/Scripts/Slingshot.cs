@@ -87,6 +87,7 @@ public class Slingshot : MonoBehaviour
             // allow it to move due to velocity and gravity
             projectileRigidbody.isKinematic = false;
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
+            FollowCam.POI = projectile;
             // doesn't delete instance, just opens up field so can be filled by another instance
             projectile = null;
         }
