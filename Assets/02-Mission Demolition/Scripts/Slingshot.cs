@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour
 {
+    static private Slingshot S;
+
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
     public float velocityMult = 8f;
@@ -15,8 +17,17 @@ public class Slingshot : MonoBehaviour
     public bool aimingMode;
     private Rigidbody projectileRigidbody;
 
+    static public Vector3 LAUNCH_POS
+    {
+        get
+        {
+            if (S == null) return Vector3.zero;
+            return S.launchPos;
+        }
+    }
     private void Awake()
     {
+        S = this;
         // get the transform of a child of Slingshot: LaunchPoint
         Transform launchPointTrans = transform.Find("LaunchPoint");
         // gets the gameObject associated with that transform and applies it to the gameObject
