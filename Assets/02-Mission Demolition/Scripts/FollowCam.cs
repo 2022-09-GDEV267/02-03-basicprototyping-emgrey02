@@ -20,11 +20,12 @@ public class FollowCam : MonoBehaviour
         camZ = this.transform.position.z;
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
 
         Vector3 destination;
-
+    
+        // if no poi, return to P: [0, 0, 0]
         if (POI == null)
         {
             destination = Vector3.zero;
@@ -34,7 +35,7 @@ public class FollowCam : MonoBehaviour
             destination = POI.transform.position;
 
             // if poi is a projectile, check to see if it's at rest
-            if (POI.tag == "Projectile")
+            if (POI.CompareTag("Projectile"))
             {
                 // if it is sleeping (not moving)
                 if (POI.GetComponent<Rigidbody>().IsSleeping())

@@ -15,6 +15,7 @@ public class Slingshot : MonoBehaviour
     public Vector3 launchPos;
     public GameObject projectile;
     public bool aimingMode;
+
     private Rigidbody projectileRigidbody;
 
     static public Vector3 LAUNCH_POS
@@ -102,6 +103,9 @@ public class Slingshot : MonoBehaviour
             FollowCam.POI = projectile;
             // doesn't delete instance, just opens up field so can be filled by another instance
             projectile = null;
+
+            MissionDemolition.ShotFired();
+            ProjectileLine.S.poi = projectile;
         }
     }
 }
