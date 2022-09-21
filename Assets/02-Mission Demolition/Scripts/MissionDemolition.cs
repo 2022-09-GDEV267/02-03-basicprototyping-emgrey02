@@ -74,6 +74,13 @@ public class MissionDemolition : MonoBehaviour
             Destroy(pTemp);
         }
 
+        // get a reference to the Building component of Main Camera
+        Building bScript = Camera.main.GetComponent<Building>();
+
+        // remove buildings and create new ones
+        bScript.clearBuildings();
+        bScript.createBuildings();
+
         // instantiate new castle
         castle = Instantiate<GameObject>(castles[level]);
         castle.transform.position = castlePos;
