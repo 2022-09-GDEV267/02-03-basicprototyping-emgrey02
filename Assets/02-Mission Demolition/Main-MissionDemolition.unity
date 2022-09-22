@@ -774,6 +774,7 @@ MonoBehaviour:
   - {fileID: 540281321070853184, guid: ebf060da2d938804d8eca1845cad592f, type: 3}
   - {fileID: 540281321070853184, guid: 19edcae461f30b14ebc1d0bfbc1b6b9a, type: 3}
   - {fileID: 540281321070853184, guid: b12f4d05f417bf241ba5c64de5a12cfb, type: 3}
+  - {fileID: 540281321070853184, guid: bac862056cdc22d4ba0f6ead051c428f, type: 3}
   level: 0
   levelMax: 0
   shotsTaken: 0
@@ -816,7 +817,7 @@ MonoBehaviour:
   treePosMin: {x: -5, y: -10, z: 20}
   treePosMax: {x: 40, y: -10, z: 100}
   treeScaleMin: 0.1
-  treeScaleMax: 0.5
+  treeScaleMax: 0.3
 --- !u!1 &905413738
 GameObject:
   m_ObjectHideFlags: 0

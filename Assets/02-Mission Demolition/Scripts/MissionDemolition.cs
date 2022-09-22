@@ -76,10 +76,11 @@ public class MissionDemolition : MonoBehaviour
 
         // get a reference to the Building component of Main Camera
         Building bScript = Camera.main.GetComponent<Building>();
+        Trees tScript = Camera.main.GetComponent<Trees>();
 
-        // remove buildings and create new ones
-        bScript.clearBuildings();
+        //create buildings + trees
         bScript.createBuildings();
+        tScript.createTrees();
 
         // instantiate new castle
         castle = Instantiate<GameObject>(castles[level]);
@@ -149,7 +150,15 @@ public class MissionDemolition : MonoBehaviour
             highScore[level] = shotsTaken;
             PlayerPrefs.SetInt(playerPrefsText1, highScore[level]);
         }
-    
+
+        // get a reference to the Building and Trees component of Main Camera
+        Building bScript = Camera.main.GetComponent<Building>();
+        Trees tScript = Camera.main.GetComponent<Trees>();
+
+        //remove buildings + trees
+        bScript.clearBuildings();
+        tScript.clearTrees();
+
         level++;
 
         if (level == levelMax)

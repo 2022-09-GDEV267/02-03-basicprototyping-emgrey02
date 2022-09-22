@@ -48,7 +48,7 @@ public class Trees : MonoBehaviour
         }
     }
 
-    public void clearBuildings()
+    public void clearTrees()
     {
         for (int i = 0; i < numTrees; i++)
         {
