@@ -114,14 +114,17 @@ public class ProjectileLine : MonoBehaviour
                 if (FollowCam.POI.CompareTag("Projectile"))
                 {
                     poi = FollowCam.POI;
-                } else
+                }
+                else
                 {
                     return; // return if we didn't find a poi
                 }
-            } else
+            }
+            else
             {
                 return; // return if we didn't find a poi
             }
+        }
 
             // if there is a poi, it's loc is added every FixedUpdate
             AddPoint();
@@ -131,6 +134,6 @@ public class ProjectileLine : MonoBehaviour
                 // once FollowCam.POI is null, make local poi null too
                 poi = null;
             }
-        }
+        
     }
 }
