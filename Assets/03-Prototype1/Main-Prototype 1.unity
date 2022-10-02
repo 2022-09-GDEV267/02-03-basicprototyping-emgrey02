@@ -675,6 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 7723665383195345719, guid: 47f44953818a5b448a9c42fa19fb23e3, type: 3}
   canvas: {fileID: 409227913}
+  player: {fileID: 1338546451}
 --- !u!1 &257552099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1388,10 @@ PrefabInstance:
     - target: {fileID: 3751263843167621839, guid: a6283fd65720ef846b6e0877335c0d9e, type: 3}
       propertyPath: m_Name
       value: Cube (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965451355138047418, guid: a6283fd65720ef846b6e0877335c0d9e, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6283fd65720ef846b6e0877335c0d9e, type: 3}
@@ -2372,7 +2377,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21196
+  m_Name: pb_Mesh32424
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2536,7 +2541,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51374
+  m_Name: pb_Mesh32634
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

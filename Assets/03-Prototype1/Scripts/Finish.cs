@@ -10,6 +10,8 @@ public class Finish : MonoBehaviour
     [SerializeField]
     private Canvas canvas;
 
+    public GameObject player;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -22,13 +24,7 @@ public class Finish : MonoBehaviour
 
             Instantiate(particles, transform.position, particles.transform.rotation);
             Timer.stop = true;
-            CreateEndScreen();
+            player.SetActive(false);
         }
-    }
-
-    void CreateEndScreen()
-    {
-        TextMeshProUGUI score = canvas.GetComponent<TextMeshProUGUI>();
-        print(score.text);
     }
 }
