@@ -72,11 +72,15 @@ public class Basket : MonoBehaviour
 
         if (applesCaught % 15 == 0)
         {
-            AppleTree.level++;
-            // get a reference to the ApplePicker component of Main Camera
-            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+            if (AppleTree.level < 2)
+            {
+                AppleTree.level++;
+                // get a reference to the ApplePicker component of Main Camera
+                ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
 
-            apScript.updateLevelText();
+                apScript.updateLevelText();
+
+            }
         }
     }
 }
