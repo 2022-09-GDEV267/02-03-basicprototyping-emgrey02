@@ -68,5 +68,11 @@ public class ApplePicker : MonoBehaviour
     public void updateLevelText()
     {
         level.text = "LEVEL " + (AppleTree.level + 1).ToString();
+        Invoke("RemoveLevelText", 2f);
+    }
+    
+    private void RemoveLevelText()
+    {
+        level.text = "";
     }
 }
